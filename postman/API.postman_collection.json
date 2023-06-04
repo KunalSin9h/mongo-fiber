@@ -1,0 +1,157 @@
+{
+	"info": {
+		"_postman_id": "604471e1-bc39-4ef1-8b90-4f6e4a5fcaea",
+		"name": "API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17603911"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{Base URL}}/api/login",
+					"host": [
+						"{{Base URL}}"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"image\": \"https://www.gravatar.com/av\",\n    \"name\": \"New Staff\",\n    \"email\": \"staff@stationery.shop\",\n    \"phone\": \"111111111\",\n    \"password\": \"staff\",\n    \"role\": \"staff\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/register?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoib3duZXIiLCJ1c2VyRW1haWwiOiJhZG1pbkBzdGF0aW9uZXJ5LnNob3AifQ.WJFDfhqHtzCcU6LshX2CQn9kcsWDvwC4DkVVVfHaG8M",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"register"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoib3duZXIiLCJ1c2VyRW1haWwiOiJhZG1pbkBzdGF0aW9uZXJ5LnNob3AifQ.WJFDfhqHtzCcU6LshX2CQn9kcsWDvwC4DkVVVfHaG8M"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Inventory",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{Base URL}}/api/inventory",
+					"host": [
+						"{{Base URL}}"
+					],
+					"path": [
+						"api",
+						"inventory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Inventory",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/inventory?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoib3duZXIiLCJ1c2VyRW1haWwiOiJhZG1pbkBzdGF0aW9uZXJ5LnNob3AifQ.WJFDfhqHtzCcU6LshX2CQn9kcsWDvwC4DkVVVfHaG8M&name=Pentonic Blue Dot Pen&category=school",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"inventory"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoib3duZXIiLCJ1c2VyRW1haWwiOiJhZG1pbkBzdGF0aW9uZXJ5LnNob3AifQ.WJFDfhqHtzCcU6LshX2CQn9kcsWDvwC4DkVVVfHaG8M"
+						},
+						{
+							"key": "name",
+							"value": "Pentonic Blue Dot Pen"
+						},
+						{
+							"key": "category",
+							"value": "school"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Sales",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{Base URL}}/api/sales",
+					"host": [
+						"{{Base URL}}"
+					],
+					"path": [
+						"api",
+						"sales"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Sales",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Base URL}}/api/sales",
+					"host": [
+						"{{Base URL}}"
+					],
+					"path": [
+						"api",
+						"sales"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "Base URL",
+			"value": "http://127.0.0.1:5000"
+		}
+	]
+}
