@@ -20,12 +20,12 @@ func (app *Config) routes() *fiber.App {
 	router.Post("/api/register", app.AuthenticationMiddleware, app.register) // Register
 
 	// Inventory Routes
-	router.Post("/api/inventory", app.addInventory) // Add Inventory Item
-	router.Get("/api/inventory", app.getInventory)  // Get Inventory Item based on different parameters
+	router.Post("/api/inventory", app.AuthenticationMiddleware, app.addInventory) // Add Inventory Item
+	router.Get("/api/inventory", app.AuthenticationMiddleware, app.getInventory)  // Get Inventory Item based on different parameters
 
 	// Sales Routes
-	router.Post("/api/sales", app.addSales) // Add Sales
-	router.Get("/api/sales", app.getSales)  // Get Sales
+	router.Post("/api/sales", app.AuthenticationMiddleware, app.addSales) // Add Sales
+	router.Get("/api/sales", app.AuthenticationMiddleware, app.getSales)  // Get Sales
 
 	return router
 }
