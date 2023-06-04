@@ -24,9 +24,12 @@ type Item struct {
 }
 
 type SalesRecord struct {
-	CustomerName  string  `json:"name"`
-	CustomerEmail string  `json:"email"`
-	CustomerPhone string  `json:"phone"`
+	CustomerName  string  `json:"customer_name"`
+	CustomerEmail string  `json:"customer_email"`
+	CustomerPhone string  `json:"customer_phone"`
+	SellerName    string  `json:"seller_name"`
+	SellerEmail   string  `json:"seller_email"`
+	SellerPhone   string  `json:"seller_phone"`
 	Date          string  `json:"date"`
 	Time          string  `json:"time"`
 	Product       string  `json:"product"`
