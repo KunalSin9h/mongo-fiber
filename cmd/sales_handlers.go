@@ -84,6 +84,26 @@ func (app *Config) addSales(c *fiber.Ctx) error {
 	}, c, fiber.StatusOK)
 }
 
+// Get Sales Record
 func (app *Config) getSales(c *fiber.Ctx) error {
-	return c.SendString("getSales")
+
+	// sort the sales records
+	var sales []models.SalesRecord
+
+	// Find all the sales records from the database
+	cursor, err := app.Sales.Find(context.Background(), bson.D{})
+
+	if err != nil {
+		return utils.SendResponse("failed to get sales records", nil, c, fiber.StatusInternalServerError)
+	}
+
+	for cursor.Next(context.Background()) {
+		var salesRecord models.SalesRecord
+		cursor.Decode(&salesRecord)
+		sales = append(sales, salesRecord)
+	}
+
+	return utils.SendResponse("", map[string]any{
+		"sales": sales,
+	}, c, fiber.StatusOK)
 }
